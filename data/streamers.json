@@ -1,13 +1,19 @@
 [
   {
     "id": "ejemplo",
-    "nombre": "Streamer de ejemplo",
-    "nick": "Notch",
+    "nombre": "Mish_Ortiz",
+    "nick": "mish_ortiz",
     "skin": "",
     "rol": "Participante",
     "plataformas": [
-      { "tipo": "kick", "url": "https://kick.com/" },
-      { "tipo": "youtube", "url": "https://youtube.com/" }
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/mish_ortiz"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@mish_ortiz"
+      }
     ],
     "envivo": null
   }
