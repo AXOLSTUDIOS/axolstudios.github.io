@@ -1,8 +1,20 @@
 {
   "mensaje": "Axol Studio es un proyecto pequeño que hacemos por gusto. No cobramos por participar ni por los mods, pero el servidor, los dominios y las horas de trabajo sí cuestan. Si quieres ayudarnos a seguir, cualquier aporte suma.",
   "metodos": [
-    { "nombre": "PayPal", "detalle": "Pon aquí tu enlace de PayPal.me", "url": "" },
-    { "nombre": "Ko-fi", "detalle": "Pon aquí tu enlace de Ko-fi", "url": "" },
-    { "nombre": "Mercado Pago", "detalle": "Pon aquí tu enlace de cobro", "url": "" }
+    {
+      "nombre": "PayPal",
+      "detalle": "",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=4VX8UNHC8V4UJ"
+    },
+    {
+      "nombre": "Ko-fi",
+      "detalle": "",
+      "url": "https://ko-fi.com/axolstudios"
+    },
+    {
+      "nombre": "Mercado Pago",
+      "detalle": "No disponible",
+      "url": ""
+    }
   ]
 }
