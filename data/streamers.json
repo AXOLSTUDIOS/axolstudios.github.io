@@ -74,5 +74,19 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "jmcrack540-mvnbf4vj",
+    "nombre": "Jmcrack540",
+    "nick": "Jmcrack540",
+    "skin": "",
+    "rol": "Participante",
+    "plataformas": [
+      {
+        "tipo": "youtube",
+        "url": "https://youtube.com/@jmcrack540?si=0aWefiR-qH8HNbh0"
+      }
+    ],
+    "envivo": null
   }
 ]
