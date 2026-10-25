@@ -174,5 +174,19 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "chica-humito-mvnbursb",
+    "nombre": "Chica humito",
+    "nick": "ChicaHumitoOfc",
+    "skin": "",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@chicahumitoofc?_r=1&_t=ZS-9AlqZjSSwXW"
+      }
+    ],
+    "envivo": null
   }
 ]
