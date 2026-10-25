@@ -31,7 +31,7 @@
     const options = (poll.opciones || []).map(o => ({ ...o, s: byId[o.id] || { nombre: o.nombre, nick: o.nick } }))
     const url = `${db}/encuestas/${encodeURIComponent(poll.id)}/votos`
     const me = voterId()
-    let counts = {}, total = 0, mine = getMyVote(poll), busy = false
+    let counts = {}, total = 0, mine = getMyVote(poll), busy = false, readError = false
 
     $('encuesta').hidden = false
     $('navPoll').hidden = false
@@ -44,6 +44,7 @@
     async function refresh() {
       try {
         const r = await fetch(`${url}.json?t=${Date.now()}`)
+        if (!r.ok) throw new Error('lectura ' + r.status)
         const votes = (await r.json()) || {}
         counts = {}; total = 0
         for (const [vid, opt] of Object.entries(votes)) {
@@ -51,7 +52,12 @@
           counts[opt] = (counts[opt] || 0) + 1; total++
           if (vid === me && !mine) { mine = opt; setMyVote(poll, opt) }
         }
-      } catch { /* sin conexión: se muestra lo último */ }
+        readError = false
+      } catch (e) {
+        readError = true
+        console.warn('[encuesta] No se pudieron leer los votos:', e.message)
+        $('pollSub').textContent = 'La votación no está disponible ahora mismo. Intenta más tarde.'
+      }
       render()
     }
 
@@ -85,11 +91,18 @@
       btn.querySelector('.poll-cta').textContent = 'Enviando…'
       try {
         const r = await fetch(`${url}/${me}.json`, { method: 'PUT', body: JSON.stringify(opt) })
-        if (!r.ok && r.status !== 401) throw new Error(r.status)
-        if (r.ok) { mine = opt; setMyVote(poll, opt) }
-        $('pollSub').textContent = 'Tu voto quedó registrado. Los resultados se actualizan solos.'
-      } catch {
-        $('pollSub').textContent = 'No se pudo enviar tu voto. Revisa tu conexión e inténtalo otra vez.'
+        if (r.ok) {
+          mine = opt; setMyVote(poll, opt)
+          $('pollSub').textContent = 'Tu voto quedó registrado. Los resultados se actualizan solos.'
+        } else {
+          // ¿Ya había votado desde este navegador?
+          const prev = await fetch(`${url}/${me}.json?t=${Date.now()}`).then(x => x.ok ? x.json() : null).catch(() => null)
+          if (prev) { mine = prev; setMyVote(poll, prev); $('pollSub').textContent = 'Ya habías votado desde este navegador.' }
+          else throw new Error('escritura ' + r.status)
+        }
+      } catch (e) {
+        console.warn('[encuesta] No se pudo votar:', e.message)
+        $('pollSub').textContent = 'No se pudo registrar tu voto. Intenta de nuevo en un momento.'
       }
       busy = false
       await refresh()
