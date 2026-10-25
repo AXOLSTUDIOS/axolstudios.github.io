@@ -16,5 +16,27 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "yio-soy-neet-mvnb9w23",
+    "nombre": "Yio_soy_Neet",
+    "nick": "Yio_Soy_Neet",
+    "skin": "",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/yiosoyneet"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@yiosoyneet?_r=1&_t=ZS-9AcK61KqRuO"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/yio_soy_neet"
+      }
+    ],
+    "envivo": null
   }
 ]
