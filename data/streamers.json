@@ -142,5 +142,23 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "miau707-mvnblzcd",
+    "nombre": "Miau707",
+    "nick": "Miau707",
+    "skin": "",
+    "rol": "Participante",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/miiau707"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.tiktok.com/@miau70707"
+      }
+    ],
+    "envivo": null
   }
 ]
