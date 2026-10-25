@@ -163,3 +163,9 @@ footer img { height: 22px; width: auto; opacity: .85; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Logos: nunca se deforman, aunque el navegador tenga una versión vieja en caché */
+img[src*="axol-logo"] { aspect-ratio: 900 / 228; object-fit: contain; height: auto; }
+.nav-logo img { height: 30px; width: auto; aspect-ratio: 900 / 228; }
+footer img[src*="axol-logo"] { height: 22px; width: auto; }
+img[src*="voragos-logo"] { aspect-ratio: 1000 / 380; object-fit: contain; height: auto; }

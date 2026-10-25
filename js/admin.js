@@ -17,7 +17,8 @@
     'data/streamers.json': [],
     'data/voragos1.json': { intro: '', capitulos: [] },
     'data/donaciones.json': { mensaje: '', metodos: [] },
-    'data/sitio.json': { launcher: '', prism: '', discord: '', redes: {} },
+    'data/sitio.json': { discord: '', firebase: '', redes: {} },
+    'data/encuestas.json': [],
   }
 
   function store(v) { try { v ? localStorage.setItem(KEY, JSON.stringify(v)) : localStorage.removeItem(KEY) } catch { /* sin almacenamiento */ } }
@@ -367,6 +368,111 @@ ${items}
       <button class="btn danger sm" type="button" data-rm>Quitar</button></div>`
   }
 
+  // ---------------------------------------------------------------- ENCUESTAS
+  let pollSel = null
+  function fbUrl() { return (files['data/sitio.json'].data.firebase || '').replace(/\/+$/, '') }
+  async function pollCounts(p) {
+    const db = fbUrl()
+    if (!db) return null
+    try {
+      const r = await fetch(`${db}/encuestas/${encodeURIComponent(p.id)}/votos.json?t=${Date.now()}`)
+      const v = (await r.json()) || {}
+      const c = {}; let t = 0
+      for (const o of Object.values(v)) { c[o] = (c[o] || 0) + 1; t++ }
+      return { c, t }
+    } catch { return null }
+  }
+  function renderPolls() {
+    const list = files['data/encuestas.json'].data
+    const streamers = files['data/streamers.json'].data
+    const p = pollSel ? list.find(x => x.id === pollSel) : null
+    const el = $('#tab-polls')
+    const db = fbUrl()
+    el.innerHTML = `${db ? '' : `<p class="note" style="color:#ffb3c1">Para recibir votos falta conectar Firebase. Sigue los pasos de abajo y pega la dirección en la pestaña «Enlaces».</p>`}
+    <div class="grid2">
+      <div>
+        <div class="inline" style="justify-content:space-between;margin-bottom:12px"><h2 style="margin:0">Encuestas</h2><button class="btn sm" id="pollNew">Nueva encuesta</button></div>
+        <div class="list">${list.map(x => `<div class="item ${x.id === pollSel ? 'sel' : ''}">
+          <span></span>
+          <div><div class="t">${A.esc(x.pregunta)}</div><div class="s">${x.activa ? (x.abierta ? 'Visible · votación abierta' : 'Visible · votación cerrada') : 'Oculta'}</div></div>
+          <div class="acts"><button class="btn ghost sm" data-edit="${A.esc(x.id)}">Abrir</button></div></div>`).join('') || '<p class="note">Aún no hay encuestas.</p>'}</div>
+        <details class="help">
+          <summary>Conectar Firebase para los votos (una sola vez)</summary>
+          <ol>
+            <li>Entra a <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console.firebase.google.com</a> con tu cuenta de Google y pulsa «Crear un proyecto» (por ejemplo «axol-votos»). Puedes desactivar Google Analytics.</li>
+            <li>En el menú, abre «Compilación → Realtime Database» y pulsa «Crear base de datos». Elige la ubicación de Estados Unidos y empieza en «modo bloqueado».</li>
+            <li>En la pestaña «Reglas», borra todo, pega esto y pulsa «Publicar»:
+              <textarea readonly style="min-height:220px;font:.8rem monospace;margin-top:6px" onclick="this.select()">{
+  "rules": {
+    "encuestas": {
+      "$encuesta": {
+        "votos": {
+          ".read": true,
+          "$votante": {
+            ".write": "!data.exists() && newData.isString() && newData.val().length <= 80 && $votante.length <= 40"
+          }
+        }
+      }
+    }
+  }
+}</textarea>
+              Con estas reglas cada visitante vota una sola vez y nadie puede borrar ni cambiar votos.</li>
+            <li>Copia la dirección que aparece arriba de los datos (algo como <b>https://axol-votos-default-rtdb.firebaseio.com</b>) y pégala en la pestaña «Enlaces».</li>
+          </ol>
+        </details>
+      </div>
+      <form class="form" id="pollForm">
+        <h2>${p ? 'Editar encuesta' : 'Nueva encuesta'}</h2>
+        <label>Pregunta <input name="pregunta" required value="${A.esc(p ? p.pregunta : '¿Quién crees que muera primero?')}"></label>
+        <div class="form" style="gap:8px"><span style="font:500 .9rem var(--display)">Opciones</span>
+          ${p ? `<p class="note" style="margin:0">Las opciones no se pueden cambiar una vez creada la encuesta.</p>` : ''}
+          <div class="list">${(p ? p.opciones : streamers).map(o => `<label class="item check-item">
+            <input type="checkbox" name="op" value="${A.esc(o.id)}" ${p ? 'checked disabled' : 'checked'} style="width:auto">
+            <img src="${A.esc(A.skinFace(streamers.find(s => s.id === o.id) || o, 36))}" alt="">
+            <span>${A.esc(o.nombre)}</span><span class="s" data-res="${A.esc(o.id)}"></span></label>`).join('') || '<p class="note">Primero agrega streamers.</p>'}</div>
+        </div>
+        <label class="check"><input type="checkbox" name="activa" ${!p || p.activa ? 'checked' : ''} style="width:auto"> Mostrar en la página de Voragos II</label>
+        <label class="check"><input type="checkbox" name="abierta" ${!p || p.abierta ? 'checked' : ''} style="width:auto"> Votación abierta (si la cierras, solo se ven los resultados)</label>
+        <p class="note" id="pollRes"></p>
+        <div class="inline">
+          <button class="btn" type="submit">${p ? 'Guardar cambios' : 'Crear encuesta'}</button>
+          ${p ? '<button class="btn danger" type="button" id="pollDel">Borrar</button>' : ''}
+        </div>
+        <p class="note">Solo se muestra en la página la encuesta visible más reciente.</p>
+      </form></div>`
+    $('#pollNew').onclick = () => { pollSel = null; renderPolls() }
+    el.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => { pollSel = b.dataset.edit; renderPolls() })
+    if (p) pollCounts(p).then(r => {
+      if (!r) return
+      $('#pollRes').textContent = `${r.t} ${r.t === 1 ? 'voto' : 'votos'} en total.`
+      for (const o of p.opciones) {
+        const span = el.querySelector(`[data-res="${CSS.escape(o.id)}"]`)
+        const n = r.c[o.id] || 0
+        if (span) span.textContent = `${n} (${r.t ? Math.round(n * 100 / r.t) : 0}%)`
+      }
+    })
+    const f = $('#pollForm')
+    f.onsubmit = e => {
+      e.preventDefault()
+      const v = { pregunta: f.pregunta.value.trim(), activa: f.activa.checked, abierta: f.abierta.checked }
+      if (p) Object.assign(p, v)
+      else {
+        const ids = [...f.querySelectorAll('[name=op]:checked')].map(c => c.value)
+        if (ids.length < 2) { toast('Elige al menos dos opciones.', true); return }
+        const opciones = ids.map(id => { const s = streamers.find(x => x.id === id); return { id, nombre: s.nombre, nick: s.nick, skin: s.skin || '' } })
+        const np = { id: uid(v.pregunta), fecha: new Date().toISOString(), ...v, opciones }
+        list.unshift(np); pollSel = np.id
+      }
+      run(f.querySelector('[type=submit]'), () => save('data/encuestas.json', `Encuesta: ${v.pregunta}`), p ? 'Encuesta guardada.' : 'Encuesta creada. Aparece en la página en 1–2 minutos.').then(renderPolls)
+    }
+    const del = $('#pollDel')
+    if (del) del.onclick = () => {
+      if (!confirm('¿Borrar esta encuesta de la página? Los votos se quedan guardados en Firebase.')) return
+      list.splice(list.indexOf(p), 1); pollSel = null
+      run(del, () => save('data/encuestas.json', `Borrar encuesta: ${p.pregunta}`), 'Encuesta borrada.').then(renderPolls)
+    }
+  }
+
   // ---------------------------------------------------------------- ENLACES
   function renderSite() {
     const d = files['data/sitio.json'].data
@@ -374,8 +480,7 @@ ${items}
     const r = k => A.esc(d.redes[k] || '')
     $('#tab-site').innerHTML = `<form class="form" id="sForm" style="max-width:640px">
       <h2>Enlaces</h2>
-      <label>Descarga de AXOL Launcher <input name="launcher" value="${A.esc(d.launcher || '')}" placeholder="Enlace de Google Drive o GitHub del .exe"></label>
-      <label>Página de Prism Launcher <input name="prism" value="${A.esc(d.prism || '')}"></label>
+      <label>Dirección de Firebase (para las encuestas) <input name="firebase" value="${A.esc(d.firebase || '')}" placeholder="https://…-default-rtdb.firebaseio.com"><small>Los pasos para conseguirla están en la pestaña «Encuestas».</small></label>
       <label>Invitación de Discord <input name="discord" value="${A.esc(d.discord || '')}" placeholder="https://discord.gg/…"></label>
       <h2 style="margin-top:12px">Redes de Axol Studio</h2>
       <div class="row">
@@ -390,9 +495,10 @@ ${items}
     const f = $('#sForm')
     f.onsubmit = e => {
       e.preventDefault()
-      Object.assign(d, { launcher: f.launcher.value.trim(), prism: f.prism.value.trim(), discord: f.discord.value.trim() })
+      d.discord = f.discord.value.trim()
+      d.firebase = f.firebase.value.trim().replace(/\/+$/, '')
       for (const k of ['youtube', 'tiktok', 'kick', 'x', 'instagram']) d.redes[k] = f[k].value.trim()
-      run(f.querySelector('[type=submit]'), () => save('data/sitio.json', 'Actualizar enlaces'), 'Enlaces guardados.')
+      run(f.querySelector('[type=submit]'), () => save('data/sitio.json', 'Actualizar enlaces'), 'Enlaces guardados.').then(renderPolls)
     }
   }
 
@@ -415,7 +521,7 @@ ${items}
       $('#app').hidden = true; $('#login').hidden = false
       return
     }
-    renderLive(); renderNews(); renderStreamers(); renderV1(); renderDonate(); renderSite()
+    renderLive(); renderNews(); renderStreamers(); renderV1(); renderDonate(); renderSite(); renderPolls()
     document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => showTab(b.dataset.tab))
   }
 

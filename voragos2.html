@@ -12,16 +12,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/voragos.css">
+  <link rel="stylesheet" href="css/voragos.css?v=2">
 </head>
 <body>
   <header class="vnav">
     <div class="wrap">
       <a class="vnav-home" href="./"><img src="img/axol-icon.png" alt="" width="256" height="256"><span>Axol Studio</span></a>
       <nav class="vnav-links" aria-label="Secciones">
+        <a href="#encuesta" id="navPoll" hidden>Encuesta</a>
         <a href="#cronicas">Crónicas</a>
         <a href="#aventureros">Aventureros</a>
-        <a href="#unirse">Unirse</a>
         <a href="voragos1.html">Voragos I</a>
       </nav>
     </div>
@@ -34,9 +34,21 @@
         <h1 style="margin:0"><img class="vhero-logo" src="img/voragos-logo.webp" alt="Voragos II" width="1000" height="380"></h1>
         <p class="vhero-tag">Las estrellas arden y caen sobre el reino. Explora, sobrevive y conquista.</p>
         <div class="vhero-actions">
-          <a class="vbtn" href="#unirse">Unirse a la aventura</a>
-          <a class="vbtn alt" href="#aventureros">Ver a los aventureros</a>
+          <a class="vbtn" href="#aventureros">Elige a tu aventurero</a>
+          <a class="vbtn alt" href="#encuesta" id="heroPoll" hidden>Vota en la encuesta</a>
         </div>
+      </div>
+    </section>
+
+    <section class="vsec" id="encuesta" hidden>
+      <div class="wrap">
+        <div class="vhead">
+          <h2 id="pollQ">La encuesta</h2>
+          <p id="pollSub">Elige con cuidado: solo tienes un voto.</p>
+          <svg class="orn" viewBox="0 0 220 18" aria-hidden="true"><path d="M0 9h92M128 9h92" stroke="currentColor" stroke-width="1"/><path d="M110 1l8 8-8 8-8-8z" fill="none" stroke="currentColor"/><path d="M110 5l4 4-4 4-4-4z" fill="currentColor"/></svg>
+        </div>
+        <div class="poll" id="poll"></div>
+        <p class="poll-total" id="pollTotal"></p>
       </div>
     </section>
 
@@ -54,34 +66,21 @@
       <div class="wrap">
         <div class="vhead">
           <h2>Los aventureros</h2>
-          <p>Quienes se atreven a cruzar el portal. Si ves la brasa encendida, están transmitiendo ahora mismo.</p>
+          <p>Cada aventurero escribe su propia historia. Elige a tu favorito, síguelo en sus canales y acompáñalo cuando la brasa se encienda: eso significa que está en vivo.</p>
           <svg class="orn" viewBox="0 0 220 18" aria-hidden="true"><path d="M0 9h92M128 9h92" stroke="currentColor" stroke-width="1"/><path d="M110 1l8 8-8 8-8-8z" fill="none" stroke="currentColor"/><path d="M110 5l4 4-4 4-4-4z" fill="currentColor"/></svg>
         </div>
         <div class="heroes" id="heroes"></div>
       </div>
     </section>
 
-    <section class="vsec" id="unirse" style="padding-top:0">
-      <div class="wrap">
-        <div class="vhead">
-          <h2>Cómo unirse</h2>
-          <svg class="orn" viewBox="0 0 220 18" aria-hidden="true"><path d="M0 9h92M128 9h92" stroke="currentColor" stroke-width="1"/><path d="M110 1l8 8-8 8-8-8z" fill="none" stroke="currentColor"/><path d="M110 5l4 4-4 4-4-4z" fill="currentColor"/></svg>
-        </div>
-        <div class="steps">
-          <div class="step frame"><h3>Descarga el launcher</h3><p>Instala AXOL Launcher. Si Windows muestra un aviso azul, pulsa «Más información» y luego «Ejecutar de todas formas».</p></div>
-          <div class="step frame"><h3>Inicia sesión</h3><p>Entra con tu cuenta de Microsoft que tenga Minecraft Java. Xbox Game Pass para PC también sirve.</p></div>
-          <div class="step frame"><h3>Instala y juega</h3><p>Pulsa INSTALAR. El launcher descarga todo y, cuando haya cambios, te mostrará ACTUALIZAR.</p></div>
-        </div>
-        <div class="join-actions" id="joinActions"></div>
-      </div>
-    </section>
   </main>
 
   <footer class="vfoot">
     <p>Voragos es una serie de <a href="./">Axol Studio</a>. ¿Te gusta? <a href="donar.html">Apoya el proyecto</a>.</p>
   </footer>
 
-  <script src="js/common.js"></script>
+  <script src="js/common.js?v=2"></script>
+  <script src="js/encuesta.js?v=2"></script>
   <script>
   (async () => {
     const A = window.Axol
@@ -141,13 +140,8 @@
       </div>`
     }).join('') : '<p class="empty-v">Los aventureros se revelarán pronto.</p>'
 
-    // Botones de descarga
-    const sitio = await A.load('sitio', {})
-    const acts = []
-    if (sitio.launcher) acts.push(`<a class="vbtn" href="${A.esc(sitio.launcher)}" target="_blank" rel="noopener">Descargar AXOL Launcher</a>`)
-    if (sitio.prism) acts.push(`<a class="vbtn alt" href="${A.esc(sitio.prism)}" target="_blank" rel="noopener">Usar Prism Launcher</a>`)
-    if (sitio.discord) acts.push(`<a class="vbtn alt" href="${A.esc(sitio.discord)}" target="_blank" rel="noopener">Discord</a>`)
-    document.getElementById('joinActions').innerHTML = acts.join('')
+    // Encuesta
+    window.AxolPoll && window.AxolPoll.init(list)
   })()
   </script>
 </body>

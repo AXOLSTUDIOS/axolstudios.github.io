@@ -29,6 +29,10 @@ En `voragos-repo/meta/distrometa.json` pon:
 y ejecuta `publicar.bat`. Desde entonces publica noticias solo desde el panel
 (ya no uses NUEVA-NOTICIA.bat, porque vuelve a poner el feed viejo).
 
+## Encuestas
+Las preguntas se crean en el panel (pestaña Encuestas) y se guardan en `data/encuestas.json`.
+Los votos se guardan en Firebase Realtime Database (dirección en Enlaces); los pasos están en el panel.
+
 ## Para el mod de "EN VIVO" en el TAB
 El mod del servidor puede leer https://axolstudios.github.io/data/streamers.json
 Cada streamer tiene `nick` (nombre en Minecraft) y `envivo` = { "plataforma", "desde" } o null.

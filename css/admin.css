@@ -66,3 +66,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--a
   .met { border-bottom: 1px solid var(--line); padding-bottom: 12px; }
   .tabs button { padding: 10px 9px; font-size: .9rem; }
 }
+
+.form label.check { display: flex; align-items: center; gap: 10px; cursor: pointer; font: 500 .95rem var(--body); }
+.form label.check input, .check-item input { width: 18px; height: 18px; accent-color: var(--axolotl); }
+.form label.check-item { display: grid; grid-template-columns: auto 36px 1fr auto; gap: 12px; cursor: pointer; font: 500 1rem var(--body); }
