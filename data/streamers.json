@@ -124,5 +124,23 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "patosando08-mvnbjxsy",
+    "nombre": "Patosando08",
+    "nick": "Patosando08",
+    "skin": "",
+    "rol": "Participante",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@patosando08"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/patosando08xd"
+      }
+    ],
+    "envivo": null
   }
 ]
