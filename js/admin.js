@@ -440,6 +440,19 @@ ${items}
         </div>
         <p class="note">Solo se muestra en la página la encuesta visible más reciente.</p>
       </form></div>`
+    if (db) {
+      fetch(`${db}/encuestas/prueba-conexion/votos.json?t=${Date.now()}`).then(r => {
+        const n = document.createElement('p'); n.className = 'note'
+        if (r.ok) { n.textContent = '✔ Firebase conectado: la página puede recibir votos.'; n.style.color = '#9be3a8' }
+        else if (r.status === 401) { n.textContent = '✖ Firebase responde, pero faltan las reglas. Pega y publica las reglas del paso 3 (abajo).'; n.style.color = '#ffb3c1' }
+        else { n.textContent = `✖ Firebase respondió ${r.status}. Revisa la dirección en «Enlaces».`; n.style.color = '#ffb3c1' }
+        el.prepend(n)
+      }).catch(() => {
+        const n = document.createElement('p'); n.className = 'note'; n.style.color = '#ffb3c1'
+        n.textContent = '✖ No se pudo contactar a Firebase. Revisa que la dirección en «Enlaces» sea la de tu Realtime Database (termina en firebaseio.com o firebasedatabase.app).'
+        el.prepend(n)
+      })
+    }
     $('#pollNew').onclick = () => { pollSel = null; renderPolls() }
     el.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => { pollSel = b.dataset.edit; renderPolls() })
     if (p) pollCounts(p).then(r => {
