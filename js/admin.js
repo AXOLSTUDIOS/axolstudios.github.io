@@ -37,7 +37,7 @@
   const b64dec = s => decodeURIComponent(escape(atob(s.replace(/\n/g, ''))))
 
   async function gh(path, opts = {}) {
-    const r = await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/${path}`, {
+    const r = await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}${path ? "/" + path : ""}`, {
       ...opts,
       headers: { Authorization: `Bearer ${cfg.token}`, Accept: 'application/vnd.github+json', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) },
     })
