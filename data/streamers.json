@@ -38,5 +38,27 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "rafer-mx-mvnbbrat",
+    "nombre": "Rafer_Mx",
+    "nick": "Rafer_Mx",
+    "skin": "",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@rafer_mx2"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/rafer_mx"
+      },
+      {
+        "tipo": "facebook",
+        "url": "https://www.facebook.com/profile.php?id=61586435890364&locale=es_LA"
+      }
+    ],
+    "envivo": null
   }
 ]
