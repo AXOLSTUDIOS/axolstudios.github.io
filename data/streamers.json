@@ -60,5 +60,19 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "mmarin-mvnbdy2t",
+    "nombre": "Mmarin",
+    "nick": "Mmarin3",
+    "skin": "",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@ttv.mmarin3"
+      }
+    ],
+    "envivo": null
   }
 ]
