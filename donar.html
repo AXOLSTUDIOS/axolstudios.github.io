@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apoyar — Axol Studio</title>
+  <meta name="description" content="Apoya a Axol Studio con un aporte voluntario.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Figtree:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/axol.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="nav-logo" href="./" aria-label="Axol Studio, inicio"><img src="img/axol-logo.png" alt="Axol Studio" width="900" height="228"></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="voragos2.html">Voragos 2</a>
+        <a href="voragos1.html">Voragos 1</a>
+        <a href="donar.html" aria-current="page">Apoyar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="donate">
+    <div class="wrap">
+      <div class="donate-msg">
+        <h1>Apoya a Axol Studio</h1>
+        <div id="msg"></div>
+        <img class="donate-art" src="img/render-grupo.webp" alt="Tres personajes de Minecraft con un hacha, un escudo y una espada" width="1384" height="752">
+      </div>
+      <div>
+        <div class="methods" id="methods"></div>
+        <p class="empty" style="margin-top:20px;font-size:.95rem">Todos los aportes son voluntarios y de la cantidad que tú quieras. Gracias por ayudarnos a seguir creando.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img src="img/axol-logo.png" alt="Axol Studio" width="900" height="228">
+      <span>© <span id="year"></span> Axol Studio. No afiliado a Mojang ni Microsoft.</span>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script>
+  (async () => {
+    const A = window.Axol
+    document.getElementById('year').textContent = new Date().getFullYear()
+    const d = await A.load('donaciones', { metodos: [] })
+    document.getElementById('msg').innerHTML = A.rich(d.mensaje || '')
+    const m = (d.metodos || []).filter(x => x.nombre)
+    document.getElementById('methods').innerHTML = m.length ? m.map(x => `
+      <div class="method">
+        <h3>${A.esc(x.nombre)}</h3>
+        <p>${A.esc(x.detalle || '')}</p>
+        ${x.url ? `<a class="btn" href="${A.esc(x.url)}" target="_blank" rel="noopener">Aportar con ${A.esc(x.nombre)}</a>` : ''}
+      </div>`).join('') : '<p class="empty">Muy pronto podrás apoyarnos desde aquí.</p>'
+  })()
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel — Axol Studio</title>
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Figtree:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/axol.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="nav-logo" href="./"><img src="img/axol-logo.png" alt="Axol Studio" width="900" height="228"></a>
+      <span class="adm-badge">Panel</span>
+    </div>
+  </header>
+
+  <main class="wrap adm">
+    <!-- Conexión -->
+    <section id="login" class="panel" hidden>
+      <h1>Conectar el panel</h1>
+      <p>El panel guarda los cambios directamente en tu repositorio de GitHub. La llave se guarda solo en este navegador.</p>
+      <form id="loginForm" class="form">
+        <label>Usuario de GitHub <input name="owner" required value="axolstudios" autocomplete="off"></label>
+        <label>Repositorio de la página <input name="repo" required value="axolstudios.github.io" autocomplete="off"></label>
+        <label>Llave de acceso (token) <input name="token" type="password" required autocomplete="off" placeholder="github_pat_…"></label>
+        <button class="btn" type="submit">Conectar</button>
+      </form>
+      <details class="help">
+        <summary>¿Cómo consigo la llave?</summary>
+        <ol>
+          <li>Abre <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
+          <li>Ponle un nombre (por ejemplo «Panel Axol») y una fecha de vencimiento.</li>
+          <li>En «Repository access» elige «Only select repositories» y selecciona <b>axolstudios.github.io</b>.</li>
+          <li>En «Permissions → Repository permissions», pon <b>Contents</b> en «Read and write».</li>
+          <li>Pulsa «Generate token», copia la llave y pégala aquí. No la compartas con nadie.</li>
+        </ol>
+      </details>
+    </section>
+
+    <!-- Panel -->
+    <section id="app" hidden>
+      <div class="adm-top">
+        <nav class="tabs" role="tablist">
+          <button role="tab" data-tab="live" aria-selected="true">En vivo</button>
+          <button role="tab" data-tab="news">Noticias</button>
+          <button role="tab" data-tab="streamers">Streamers</button>
+          <button role="tab" data-tab="v1">Voragos 1</button>
+          <button role="tab" data-tab="donate">Donaciones</button>
+          <button role="tab" data-tab="site">Enlaces</button>
+        </nav>
+        <button class="link" id="logout" type="button">Desconectar</button>
+      </div>
+
+      <div class="tab" id="tab-live"></div>
+      <div class="tab" id="tab-news" hidden></div>
+      <div class="tab" id="tab-streamers" hidden></div>
+      <div class="tab" id="tab-v1" hidden></div>
+      <div class="tab" id="tab-donate" hidden></div>
+      <div class="tab" id="tab-site" hidden></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/common.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voragos I — Axol Studio</title>
+  <meta name="description" content="La historia de Voragos I, la primera serie de Axol Studio.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/voragos.css">
+</head>
+<body>
+  <header class="vnav">
+    <div class="wrap">
+      <a class="vnav-home" href="./"><img src="img/axol-icon.png" alt="" width="256" height="256"><span>Axol Studio</span></a>
+      <nav class="vnav-links" aria-label="Secciones">
+        <a href="#historia">La historia</a>
+        <a href="voragos2.html">Voragos II</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="vhero v1hero">
+      <div class="vhero-inner">
+        <h1 class="v1-title">Voragos I</h1>
+        <p class="vhero-tag" id="intro">Antes de que cayeran las estrellas, hubo una primera historia.</p>
+      </div>
+    </section>
+
+    <section class="vsec" id="historia">
+      <div class="wrap">
+        <div class="vhead">
+          <h2>La crónica</h2>
+          <svg class="orn" viewBox="0 0 220 18" aria-hidden="true"><path d="M0 9h92M128 9h92" stroke="currentColor" stroke-width="1"/><path d="M110 1l8 8-8 8-8-8z" fill="none" stroke="currentColor"/><path d="M110 5l4 4-4 4-4-4z" fill="currentColor"/></svg>
+        </div>
+        <div class="chron" id="chron"><p class="empty-v">Esta historia aún se está escribiendo.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="vfoot">
+    <p>Voragos es una serie de <a href="./">Axol Studio</a>. Continúa en <a href="voragos2.html">Voragos II</a>.</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script>
+  (async () => {
+    const A = window.Axol
+    const d = await A.load('voragos1', { capitulos: [] })
+    if (d.intro) document.getElementById('intro').textContent = d.intro
+    if (d.capitulos && d.capitulos.length) {
+      document.getElementById('chron').innerHTML = d.capitulos.map(c => `
+        <article class="chapter">
+          <h3>${A.esc(c.titulo)}</h3>
+          ${c.imagen ? `<img src="${A.esc(c.imagen)}" alt="" loading="lazy">` : ''}
+          ${A.rich(c.texto)}
+        </article>`).join('')
+    }
+  })()
+  </script>
+</body>
+</html>

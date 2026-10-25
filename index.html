@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Axol Studio</title>
+  <meta name="description" content="Axol Studio crea mods de Minecraft y organiza eventos para streamers que van empezando.">
+  <link rel="icon" href="img/favicon.png">
+  <meta property="og:title" content="Axol Studio">
+  <meta property="og:description" content="Mods de Minecraft y eventos para streamers que van empezando.">
+  <meta property="og:image" content="img/render-grupo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Figtree:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/axol.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="nav-logo" href="./" aria-label="Axol Studio, inicio"><img src="img/axol-logo.png" alt="Axol Studio" width="900" height="228"></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="voragos2.html">Voragos 2</a>
+        <a href="voragos1.html">Voragos 1</a>
+        <a href="donar.html">Apoyar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1><img src="img/axol-logo.png" alt="Axol Studio" width="900" height="228"></h1>
+          <p class="hero-lead">Creamos mods de Minecraft y eventos donde los streamers que van empezando pueden brillar.</p>
+          <div class="hero-actions">
+            <a class="btn" href="voragos2.html">Entrar a Voragos 2</a>
+            <a class="btn ghost" href="donar.html">Apoyar el proyecto</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="img/render-solo.webp" alt="Personaje de Minecraft con sudadera azul sosteniendo a su gato y una espada de diamante" width="1200" height="855">
+        </div>
+      </div>
+    </section>
+
+    <aside class="live" id="live" hidden aria-label="Streamers en vivo">
+      <div class="wrap">
+        <span class="live-title"><span class="live-dot"></span>En vivo ahora</span>
+        <div class="live-list" id="liveList"></div>
+      </div>
+    </aside>
+
+    <section class="block" id="nosotros">
+      <div class="wrap about">
+        <h2>Quiénes somos</h2>
+        <div>
+          <p>Axol Studio es un equipo pequeño que vive dentro de Minecraft. Diseñamos mundos, programamos mods propios y armamos series donde varios creadores comparten una misma historia.</p>
+          <p>Nuestro enfoque son los streamers pequeños: les damos un escenario cuidado, con mecánicas nuevas y eventos en vivo, para que su comunidad tenga algo especial que ver y ellos un lugar donde crecer.</p>
+          <ul class="about-points">
+            <li>Series y eventos para streamers de cualquier tamaño</li>
+            <li>Mods propios hechos para cada historia</li>
+            <li>Un launcher que instala y actualiza todo con un clic</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="proyectos" style="padding-top:0">
+      <div class="wrap">
+        <h2>Proyectos</h2>
+        <div class="projects">
+          <a class="project v2" href="voragos2.html">
+            <img src="img/voragos-logo.webp" alt="Voragos II" width="1000" height="380">
+            <span class="tag">Temporada actual</span>
+            <p>Fantasía oscura medieval: clases, dragones, mazmorras vivas y jefes que se invocan con rituales.</p>
+          </a>
+          <a class="project v1" href="voragos1.html">
+            <span class="tag">Donde todo empezó</span>
+            <h3>Voragos 1</h3>
+            <p>La primera historia del reino, contada capítulo a capítulo.</p>
+          </a>
+          <div class="project mods">
+            <span class="tag">Hechos en casa</span>
+            <h3>Mods</h3>
+            <p>Cada serie trae mecánicas propias que programamos para ella.</p>
+            <div class="mod-list"><span>BossRituals</span><span>Resurrección</span><span>CourierFamiliars</span><span>Dreadkeep</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="support">
+      <div class="wrap">
+        <img src="img/axol-icon.png" alt="" width="256" height="256">
+        <div>
+          <h2>Hecho por gusto, sostenido por la comunidad</h2>
+          <p>No cobramos por participar ni por los mods. Si te gusta lo que hacemos, un aporte nos ayuda a pagar el servidor y seguir creando.</p>
+        </div>
+        <a class="btn" href="donar.html">Hacer un aporte</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img src="img/axol-logo.png" alt="Axol Studio" width="900" height="228">
+      <div class="socials" id="socials"></div>
+      <span>© <span id="year"></span> Axol Studio. No afiliado a Mojang ni Microsoft.</span>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script>
+  (async () => {
+    const A = window.Axol
+    document.getElementById('year').textContent = new Date().getFullYear()
+
+    const streamers = await A.load('streamers', [])
+    const live = streamers.filter(A.isLive)
+    if (live.length) {
+      document.getElementById('liveList').innerHTML = live.map(s => {
+        const url = A.liveUrl(s) || '#'
+        return `<a class="live-chip" href="${A.esc(url)}" target="_blank" rel="noopener">
+          <img src="${A.esc(A.skinFace(s, 56))}" alt="" width="28" height="28">
+          <span>${A.esc(s.nombre)}</span>${A.icon(s.envivo.plataforma)}</a>`
+      }).join('')
+      document.getElementById('live').hidden = false
+    }
+
+    const sitio = await A.load('sitio', {})
+    const redes = Object.assign({}, sitio.redes || {}, sitio.discord ? { discord: sitio.discord } : {})
+    document.getElementById('socials').innerHTML = Object.entries(redes).filter(([, u]) => u)
+      .map(([k, u]) => `<a href="${A.esc(u)}" target="_blank" rel="noopener" aria-label="${A.platform(k).name}">${A.icon(k)}</a>`).join('')
+  })()
+  </script>
+</body>
+</html>

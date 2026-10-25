@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ejemplo",
+    "nombre": "Streamer de ejemplo",
+    "nick": "Notch",
+    "skin": "",
+    "rol": "Participante",
+    "plataformas": [
+      { "tipo": "kick", "url": "https://kick.com/" },
+      { "tipo": "youtube", "url": "https://youtube.com/" }
+    ],
+    "envivo": null
+  }
+]

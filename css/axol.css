@@ -1,0 +1,165 @@
+/* ==========================================================================
+   AXOL STUDIO — estilo principal (inicio y donaciones)
+   Pizarra profunda (deepslate), hueso y rosa ajolote.
+   ========================================================================== */
+:root {
+  --slate: #1f2229;
+  --slate-2: #272b33;
+  --slate-3: #323743;
+  --bone: #ece7dc;
+  --muted: #a3a8b3;
+  --axolotl: #f4a3bd;
+  --gill: #e0668f;
+  --line: rgba(236, 231, 220, 0.12);
+  --display: 'Chakra Petch', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+  --pixel: 'Silkscreen', monospace;
+  --wrap: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--slate);
+  /* textura de bloque de pizarra, casi invisible */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' shape-rendering='crispEdges'%3E%3Cg fill='%23ffffff'%3E%3Crect x='0' y='0' width='8' height='8' opacity='.018'/%3E%3Crect x='24' y='8' width='8' height='8' opacity='.025'/%3E%3Crect x='48' y='0' width='8' height='8' opacity='.015'/%3E%3Crect x='8' y='32' width='8' height='8' opacity='.022'/%3E%3Crect x='40' y='24' width='8' height='8' opacity='.012'/%3E%3Crect x='56' y='48' width='8' height='8' opacity='.02'/%3E%3Crect x='16' y='56' width='8' height='8' opacity='.016'/%3E%3Crect x='32' y='48' width='8' height='8' opacity='.01'/%3E%3C/g%3E%3Cg fill='%23000000'%3E%3Crect x='16' y='16' width='8' height='8' opacity='.08'/%3E%3Crect x='56' y='16' width='8' height='8' opacity='.06'/%3E%3Crect x='32' y='32' width='8' height='8' opacity='.07'/%3E%3Crect x='0' y='48' width='8' height='8' opacity='.05'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 128px 128px;
+  color: var(--bone);
+  font: 400 1.0625rem/1.65 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--axolotl); }
+:focus-visible { outline: 2px solid var(--axolotl); outline-offset: 3px; }
+
+.wrap { width: min(var(--wrap), 100% - 32px); margin-inline: auto; }
+
+/* --- Botones con esquinas "pixel" ----------------------------------------- */
+.btn {
+  --notch: 4px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 22px;
+  font: 600 1rem/1 var(--display);
+  letter-spacing: .02em;
+  text-decoration: none;
+  color: var(--slate);
+  background: var(--axolotl);
+  border: 0; cursor: pointer;
+  clip-path: polygon(var(--notch) 0, calc(100% - var(--notch)) 0, calc(100% - var(--notch)) var(--notch), 100% var(--notch), 100% calc(100% - var(--notch)), calc(100% - var(--notch)) calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, var(--notch) 100%, var(--notch) calc(100% - var(--notch)), 0 calc(100% - var(--notch)), 0 var(--notch), var(--notch) var(--notch));
+  box-shadow: inset 0 -4px 0 var(--gill);
+  transition: transform .12s ease, filter .12s ease;
+}
+.btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); box-shadow: inset 0 -2px 0 var(--gill); }
+.btn.ghost { background: var(--slate-3); color: var(--bone); box-shadow: inset 0 -4px 0 #1a1d23; }
+
+/* --- Navegación ------------------------------------------------------------ */
+.nav { position: sticky; top: 0; z-index: 10; background: rgba(31, 34, 41, .86); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav-logo img { height: 30px; width: auto; }
+.nav-links { display: flex; gap: 6px; }
+.nav-links a { color: var(--bone); text-decoration: none; font: 500 .95rem var(--display); padding: 8px 12px; opacity: .8; }
+.nav-links a:hover, .nav-links a[aria-current] { opacity: 1; color: var(--axolotl); }
+
+/* --- Hero ------------------------------------------------------------------ */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 24px; min-height: min(640px, 82vh); padding-block: 40px 0; }
+.hero h1 { margin: 0; }
+.hero h1 img { width: min(520px, 100%); height: auto; }
+.hero-lead { font: 400 1.3rem/1.5 var(--body); color: var(--bone); max-width: 30ch; margin: 28px 0 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-art { position: relative; align-self: end; }
+.hero-art::before {
+  content: ''; position: absolute; inset: 15% 5% 0 15%;
+  background: radial-gradient(closest-side, rgba(244, 163, 189, .35), transparent 70%);
+  filter: blur(20px);
+}
+.hero-art img { position: relative; width: 100%; height: auto; }
+
+/* --- En vivo --------------------------------------------------------------- */
+.live { border-block: 1px solid var(--line); background: rgba(0, 0, 0, .18); }
+.live[hidden] { display: none; }
+.live .wrap { display: flex; align-items: center; gap: 22px; padding-block: 16px; overflow-x: auto; }
+.live-title { font: 400 .8rem var(--pixel); color: var(--axolotl); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.live-dot { width: 8px; height: 8px; background: #ff4d6d; animation: blink 1.4s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+.live-list { display: flex; gap: 10px; }
+.live-chip { display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 6px; background: var(--slate-2); color: var(--bone); text-decoration: none; white-space: nowrap; border: 1px solid var(--line); }
+.live-chip:hover { border-color: var(--axolotl); }
+.live-chip img { width: 28px; height: 28px; image-rendering: pixelated; }
+.live-chip .pf-icon { width: 16px; height: 16px; }
+
+/* --- Secciones ------------------------------------------------------------- */
+section.block { padding-block: 96px; }
+.block h2 { font: 600 clamp(1.8rem, 3.2vw, 2.4rem)/1.15 var(--display); margin: 0 0 20px; letter-spacing: -.01em; }
+.about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+.about p { margin: 0 0 1em; max-width: 62ch; color: #d6d2c8; }
+.about-points { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+.about-points li { display: grid; grid-template-columns: 14px 1fr; gap: 14px; align-items: baseline; }
+.about-points li::before { content: ''; width: 10px; height: 10px; background: var(--axolotl); transform: translateY(1px); }
+
+/* Proyectos */
+.projects { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.project { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 260px; padding: 26px; color: var(--bone); text-decoration: none; background: var(--slate-2); border: 1px solid var(--line); overflow: hidden; }
+.project h3 { font: 600 1.35rem var(--display); margin: 0 0 6px; }
+.project p { margin: 0; color: var(--muted); max-width: 46ch; }
+.project:hover { border-color: rgba(244, 163, 189, .5); }
+.project.v2 { grid-column: span 6; min-height: 380px; background: #120d0b url('../img/voragos-fondo.jpg') center 35% / cover; }
+.project.v2::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 7, 6, .92) 10%, rgba(10, 7, 6, .1) 70%); }
+.project.v2 > * { position: relative; z-index: 1; }
+.project.v2 img { width: min(420px, 80%); height: auto; margin-bottom: 18px; filter: drop-shadow(0 6px 20px rgba(0, 0, 0, .7)); }
+.project.v2 p { color: #e8d9bf; }
+.project.v1 { grid-column: span 3; background: linear-gradient(160deg, #2a2420, #1b1714); }
+.project.mods { grid-column: span 3; }
+.project .tag { font: 400 .7rem var(--pixel); color: var(--axolotl); margin-bottom: 10px; }
+.mod-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.mod-list span { font: 500 .85rem var(--display); padding: 4px 10px; background: var(--slate-3); }
+
+/* Banda de apoyo */
+.support { background: var(--slate-2); border-block: 1px solid var(--line); }
+.support .wrap { display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; padding-block: 48px; }
+.support img { width: 64px; height: 64px; }
+.support h2 { font: 600 1.5rem var(--display); margin: 0 0 4px; }
+.support p { margin: 0; color: var(--muted); max-width: 60ch; }
+
+/* --- Página de donaciones ------------------------------------------------- */
+.donate { padding-block: 80px 96px; }
+.donate .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.donate h1 { font: 600 clamp(2rem, 4vw, 3rem)/1.1 var(--display); margin: 0 0 20px; }
+.donate-msg p { margin: 0 0 1em; color: #d6d2c8; max-width: 52ch; }
+.methods { display: grid; gap: 12px; }
+.method { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: center; padding: 20px 22px; background: var(--slate-2); border: 1px solid var(--line); }
+.method h3 { margin: 0; font: 600 1.15rem var(--display); }
+.method p { margin: 0; color: var(--muted); grid-column: 1; font-size: .95rem; word-break: break-word; }
+.method .btn { grid-row: 1 / span 2; grid-column: 2; }
+.donate-art { margin-top: 36px; max-width: 420px; }
+.empty { color: var(--muted); }
+
+/* --- Pie ------------------------------------------------------------------- */
+footer { border-top: 1px solid var(--line); padding-block: 40px; color: var(--muted); font-size: .9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+footer img { height: 22px; width: auto; opacity: .85; }
+.socials { display: flex; gap: 6px; }
+.socials a { display: grid; place-items: center; width: 38px; height: 38px; color: var(--bone); background: var(--slate-2); }
+.socials a:hover { color: var(--axolotl); }
+.socials svg { width: 18px; height: 18px; }
+
+/* --- Responsive ------------------------------------------------------------ */
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; min-height: 0; padding-top: 48px; }
+  .hero-art { max-width: 520px; margin-inline: auto; }
+  .about, .donate .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .project.v1, .project.mods { grid-column: span 6; }
+  .support .wrap { grid-template-columns: 1fr; gap: 16px; }
+  section.block { padding-block: 64px; }
+}
+@media (max-width: 520px) {
+  .nav-links a { padding: 8px 7px; font-size: .88rem; }
+  .nav-logo img { height: 24px; }
+  .method { grid-template-columns: 1fr; }
+  .method .btn { grid-row: auto; grid-column: 1; justify-self: start; margin-top: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
