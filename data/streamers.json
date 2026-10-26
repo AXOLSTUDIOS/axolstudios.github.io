@@ -177,14 +177,22 @@
   },
   {
     "id": "chica-humito-mvnbursb",
-    "nombre": "Chica humito",
+    "nombre": "ChicaHumitoOfc",
     "nick": "ChicaHumitoOfc",
     "skin": "",
-    "rol": "",
+    "rol": "Humito",
     "plataformas": [
       {
         "tipo": "tiktok",
-        "url": "https://www.tiktok.com/@chicahumitoofc?_r=1&_t=ZS-9AlqZjSSwXW"
+        "url": "https://www.tiktok.com/@chicahumitoofc?_r=1&_t=ZS-9AriesfwfUi"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://m.twitch.tv/chicahumitoofc/home"
+      },
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/chicahumito"
       }
     ],
     "envivo": null
