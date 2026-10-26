@@ -374,5 +374,31 @@
         "url": "https://www.instagram.com/zuragrey/"
       }
     ]
+  },
+  {
+    "id": "duck-el-apostador-mvpk03qg",
+    "skin": "",
+    "envivo": null,
+    "nombre": "duck el apostador",
+    "nick": "duck_tactical",
+    "rol": "Apostador,Estafador,Ladron, Paladin?",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/duck-tactical"
+      },
+      {
+        "tipo": "otra",
+        "url": "https://starvios.com/duck_tactical"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/ducktacticalxv"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@duck_tactical"
+      }
+    ]
   }
 ]
