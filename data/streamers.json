@@ -206,5 +206,23 @@
         "url": "https://www.twitch.tv/derekelchid0"
       }
     ]
+  },
+  {
+    "id": "emymochii-mvomqkiv",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Emymochii",
+    "nick": "Emymochiii",
+    "rol": "Elfo",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/emymochiii"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@Emymochiii"
+      }
+    ]
   }
 ]
