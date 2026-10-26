@@ -320,5 +320,23 @@
         "url": "https://www.tiktok.com/@xzephyro"
       }
     ]
+  },
+  {
+    "id": "lazelyn-mvopjcis",
+    "skin": "",
+    "envivo": null,
+    "nombre": "LaZelyn_",
+    "nick": "YZVzelyn",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/LaZelyn_"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@lazelynentwitch?_r=1&_t=ZS-9Armf2eJbhX"
+      }
+    ]
   }
 ]
