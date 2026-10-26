@@ -7,5 +7,6 @@
     "x": "",
     "instagram": ""
   },
-  "firebase": "https://axol-votos-default-rtdb.firebaseio.com"
+  "firebase": "https://axol-votos-default-rtdb.firebaseio.com",
+  "registroAbierto": true
 }
