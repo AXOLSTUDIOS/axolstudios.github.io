@@ -232,5 +232,27 @@
         "url": "https://www.youtube.com/@Emymochiii"
       }
     ]
+  },
+  {
+    "id": "adriss-mvon37in",
+    "skin": "",
+    "envivo": null,
+    "nombre": "adriss",
+    "nick": "BicentricHat996",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@adictuss8"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@Adriss843"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/bicentrichat996"
+      }
+    ]
   }
 ]
