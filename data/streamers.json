@@ -296,6 +296,10 @@
       {
         "tipo": "tiktok",
         "url": "https://www.tiktok.com/@leonardoem36?is_from_webapp=1&sender_device=pc"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/l30n4rd0l3m"
       }
     ]
   }
