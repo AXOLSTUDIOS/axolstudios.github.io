@@ -535,6 +535,7 @@ ${items}
       return
     }
     renderLive(); renderNews(); renderStreamers(); renderV1(); renderDonate(); renderSite(); renderPolls()
+    if (window.AxolRegistros) window.AxolRegistros.init({ files, save, toast, run, uid, refresh: () => { renderStreamers(); renderLive(); renderPolls() } })
     document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => showTab(b.dataset.tab))
   }
 
