@@ -254,5 +254,23 @@
         "url": "https://www.twitch.tv/bicentrichat996"
       }
     ]
+  },
+  {
+    "id": "kmp-vt-mvon396b",
+    "skin": "",
+    "envivo": null,
+    "nombre": "KMP_VT",
+    "nick": "KMPG0D",
+    "rol": "El hechicero de las llamas azules",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/kmp_vt"
+      },
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/kmp-vt"
+      }
+    ]
   }
 ]
