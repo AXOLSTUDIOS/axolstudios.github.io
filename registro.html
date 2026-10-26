@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Registro de aventureros — Voragos II</title>
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/voragos.css?v=3">
+  <style>
+    .reg { max-width: 640px; margin: 0 auto; padding: 120px 16px 80px; }
+    .reg .vhero-logo { width: min(420px, 80vw); margin: 0 auto 10px; animation: none; }
+    .reg-form { padding: 32px 30px; display: grid; gap: 18px; }
+    .reg-form label { display: grid; gap: 6px; font: 600 .95rem var(--display); letter-spacing: .04em; }
+    .reg-form small { font: italic 400 1rem var(--body); color: var(--parch-dim); letter-spacing: 0; }
+    .reg-form input, .reg-form select { font: 400 1.1rem var(--body); color: var(--parch); background: rgba(0,0,0,.35); border: 1px solid var(--line); padding: 10px 12px; width: 100%; }
+    .reg-form input:focus, .reg-form select:focus { outline: none; border-color: var(--ember); }
+    .nick-row { display: grid; grid-template-columns: 1fr 72px; gap: 14px; align-items: end; }
+    .nick-row img { width: 72px; height: 72px; image-rendering: pixelated; border: 2px solid var(--gold); background: #000; }
+    .pf { display: grid; grid-template-columns: 150px 1fr auto; gap: 8px; }
+    .pf button { background: none; border: 1px solid var(--line); color: var(--parch-dim); font: 1rem var(--body); padding: 0 12px; cursor: pointer; }
+    .add { justify-self: start; background: none; border: 0; color: var(--ember-hot); font: italic 1.05rem var(--body); cursor: pointer; padding: 0; }
+    .msg { text-align: center; font-style: italic; min-height: 1.5em; }
+    .msg.err { color: #ff9a8a; }
+    .done { text-align: center; padding: 40px 24px; }
+    .done h2 { font: 600 1.8rem var(--display); margin: 0 0 10px; }
+    @media (max-width: 560px) { .pf { grid-template-columns: 1fr; } .reg-form { padding: 24px 18px; } }
+  </style>
+</head>
+<body>
+  <main class="reg">
+    <div class="vhead">
+      <img class="vhero-logo" src="img/voragos-logo.webp" alt="Voragos II" width="1000" height="380">
+      <h1 style="font:600 clamp(1.6rem,4vw,2.2rem) var(--display);margin:10px 0 0">Registro de aventureros</h1>
+      <p>Deja tus datos para aparecer en la página de la serie. El equipo de Axol Studio los revisará antes de publicarlos.</p>
+    </div>
+
+    <div id="closed" class="frame done" hidden>
+      <h2>El registro está cerrado</h2>
+      <p>Si eres parte de la serie y aún no apareces, habla con el equipo de Axol Studio.</p>
+    </div>
+
+    <form id="form" class="frame reg-form" hidden>
+      <label>Tu nombre de creador
+        <input name="nombre" required maxlength="40" placeholder="Como quieres aparecer en la página">
+      </label>
+      <div class="nick-row">
+        <label>Tu nombre en Minecraft
+          <input name="nick" required maxlength="16" pattern="[A-Za-z0-9_]{3,16}" placeholder="Exactamente como en el juego">
+          <small>De aquí sale la cara de tu skin y el aviso de EN VIVO en el servidor.</small>
+        </label>
+        <img id="face" src="img/cara.png" alt="" width="72" height="72">
+      </div>
+      <label>Tu personaje en la serie (opcional)
+        <input name="rol" maxlength="40" placeholder="Paladín, hechicera, cazador de dragones…">
+      </label>
+      <div style="display:grid;gap:8px">
+        <span style="font:600 .95rem var(--display);letter-spacing:.04em">Tus canales</span>
+        <div id="pfs" style="display:grid;gap:8px"></div>
+        <button type="button" class="add" id="addPf">+ Agregar otro canal</button>
+      </div>
+      <label id="codeLabel">Código de invitación
+        <input name="codigo" maxlength="40" autocomplete="off" placeholder="Te lo da el equipo de Axol Studio">
+      </label>
+      <p class="msg" id="msg"></p>
+      <button class="vbtn" type="submit" style="justify-self:center">Enviar registro</button>
+    </form>
+
+    <div id="done" class="frame done" hidden>
+      <h2>¡Registro enviado!</h2>
+      <p>Gracias. Aparecerás en la página de Voragos II cuando el equipo apruebe tu registro.</p>
+      <p><a href="voragos2.html">Ver la página de la serie</a></p>
+    </div>
+  </main>
+
+  <script src="js/common.js?v=2"></script>
+  <script src="js/registro.js?v=1"></script>
+</body>
+</html>
