@@ -302,5 +302,23 @@
         "url": "https://www.twitch.tv/l30n4rd0l3m"
       }
     ]
+  },
+  {
+    "id": "xzephyro-mvopjaq3",
+    "skin": "",
+    "envivo": null,
+    "nombre": "xZephyro",
+    "nick": "xZephyro",
+    "rol": "xZephyro",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/xzephyro_"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@xzephyro"
+      }
+    ]
   }
 ]
