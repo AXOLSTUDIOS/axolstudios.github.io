@@ -80,11 +80,27 @@
     "nombre": "Jmcrack540",
     "nick": "Jmcrack540",
     "skin": "",
-    "rol": "Participante",
+    "rol": "Un seguidor de la UNSC Y LA COG",
     "plataformas": [
       {
         "tipo": "youtube",
-        "url": "https://youtube.com/@jmcrack540?si=0aWefiR-qH8HNbh0"
+        "url": "https://studio.youtube.com/channel/UC1wkBdQ_MDIEezTjfYeuALQ"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@jmcrack540"
+      },
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/jmcrack540"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/jmcrack540"
+      },
+      {
+        "tipo": "instagram",
+        "url": "https://www.instagram.com/jmcr.ack540/"
       }
     ],
     "envivo": null
