@@ -188,5 +188,23 @@
       }
     ],
     "envivo": null
+  },
+  {
+    "id": "derekelchid0-mvomqi91",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Derekelchid0",
+    "nick": "D3r3k3lchid0",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@derekelchid0"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/derekelchid0"
+      }
+    ]
   }
 ]
