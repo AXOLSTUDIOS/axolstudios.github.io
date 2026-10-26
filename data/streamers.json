@@ -352,5 +352,27 @@
         "url": "https://www.tiktok.com/@normixr6"
       }
     ]
+  },
+  {
+    "id": "cherry-zura-mvopseha",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Cherry/Zura",
+    "nick": "AzuraGrey",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@zuragempleyzzz?is_from_webapp=1&sender_device=pc"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/zuragameplays"
+      },
+      {
+        "tipo": "instagram",
+        "url": "https://www.instagram.com/zuragrey/"
+      }
+    ]
   }
 ]
