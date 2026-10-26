@@ -112,15 +112,11 @@
     "nombre": "KiritoSenpaiYT",
     "nick": "KiritoSenpaiYT",
     "skin": "",
-    "rol": "Participante",
+    "rol": "cazador de dragones",
     "plataformas": [
       {
         "tipo": "kick",
         "url": "https://kick.com/kiritosenpaiyt"
-      },
-      {
-        "tipo": "tiktok",
-        "url": "https://www.tiktok.com/@kiritosenpaiyt1"
       }
     ],
     "envivo": null
