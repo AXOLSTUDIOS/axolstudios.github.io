@@ -1,10 +1,10 @@
 [
   {
     "id": "ejemplo",
-    "nombre": "Mish_Ortiz",
+    "nombre": "mish_ortiz",
     "nick": "mish_ortiz",
     "skin": "",
-    "rol": "Participante",
+    "rol": "",
     "plataformas": [
       {
         "tipo": "twitch",
