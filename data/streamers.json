@@ -414,5 +414,23 @@
         "url": "https://www.tiktok.com/@alainramos28"
       }
     ]
+  },
+  {
+    "id": "clankirin-mvpywf10",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Clankirin",
+    "nick": "Clankirin",
+    "rol": "hechicero",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@clankirin?_r=1&_t=ZS-9AcAYhDr1iI"
+      },
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/clankirin"
+      }
+    ]
   }
 ]
