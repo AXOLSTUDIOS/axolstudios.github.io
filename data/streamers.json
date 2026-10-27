@@ -432,5 +432,27 @@
         "url": "https://kick.com/clankirin"
       }
     ]
+  },
+  {
+    "id": "zaintv1-mvpywj2i",
+    "skin": "",
+    "envivo": null,
+    "nombre": "zaintv1",
+    "nick": "zaintv1games",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/zaintv1"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@zaintv111?is_from_webapp=1&sender_device=pc"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@zaincraft-l6i"
+      }
+    ]
   }
 ]
