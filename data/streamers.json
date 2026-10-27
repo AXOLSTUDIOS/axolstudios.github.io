@@ -472,5 +472,31 @@
         "url": "https://www.youtube.com/channel/UCCAVsiaD-xbp53vKrHRM0Fg"
       }
     ]
+  },
+  {
+    "id": "yessi-bunny-kim-mvpywl7n",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Yessi Bunny Kim",
+    "nick": "yessikimjv",
+    "rol": "Bunny Builder",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@yessibunnykim"
+      },
+      {
+        "tipo": "instagram",
+        "url": "https://www.instagram.com/yessibunnykim"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@YessiBunnyKim"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/yessikim6"
+      }
+    ]
   }
 ]
