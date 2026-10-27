@@ -454,5 +454,23 @@
         "url": "https://www.youtube.com/@zaincraft-l6i"
       }
     ]
+  },
+  {
+    "id": "tio-mora-mvpywjyo",
+    "skin": "",
+    "envivo": null,
+    "nombre": "TIO MORA",
+    "nick": "TIOMORA",
+    "rol": "Cazador de dragones",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@tio__mora?lang=es-419"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/channel/UCCAVsiaD-xbp53vKrHRM0Fg"
+      }
+    ]
   }
 ]
