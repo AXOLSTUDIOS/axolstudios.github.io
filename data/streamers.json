@@ -534,5 +534,35 @@
         "url": "https://www.twitch.tv/totornero"
       }
     ]
+  },
+  {
+    "id": "jmcrack540-mvt485ct",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Jmcrack540",
+    "nick": "Jmcrack540",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/jmcrack540"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@jmcrack540"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/jmcrack540"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@jmcrack540"
+      },
+      {
+        "tipo": "instagram",
+        "url": "https://www.instagram.com/jmcr.ack540/"
+      }
+    ]
   }
 ]
