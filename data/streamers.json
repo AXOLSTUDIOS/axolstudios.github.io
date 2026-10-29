@@ -520,5 +520,19 @@
         "url": "https://www.tiktok.com/@soysendor?_r=1&_t=ZS-9AwwjF7abzB"
       }
     ]
+  },
+  {
+    "id": "totorneo-mvt483ha",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Totorneo",
+    "nick": "Totornero",
+    "rol": "hechizero",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/totornero"
+      }
+    ]
   }
 ]
