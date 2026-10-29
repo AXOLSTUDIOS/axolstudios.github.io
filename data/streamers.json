@@ -76,6 +76,24 @@
     "envivo": null
   },
   {
+    "id": "kmpg0d-mvnbgvoh",
+    "nombre": "KMPG0D",
+    "nick": "KMPG0D4917",
+    "skin": "",
+    "rol": "Participante",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@kmp_vt"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/kmp_vt"
+      }
+    ],
+    "envivo": null
+  },
+  {
     "id": "jmcrack540-mvnbf4vj",
     "nombre": "Jmcrack540",
     "nick": "Jmcrack540",
@@ -101,24 +119,6 @@
       {
         "tipo": "instagram",
         "url": "https://www.instagram.com/jmcr.ack540/"
-      }
-    ],
-    "envivo": null
-  },
-  {
-    "id": "kmpg0d-mvnbgvoh",
-    "nombre": "KMPG0D",
-    "nick": "KMPG0D4917",
-    "skin": "",
-    "rol": "Participante",
-    "plataformas": [
-      {
-        "tipo": "tiktok",
-        "url": "https://www.tiktok.com/@kmp_vt"
-      },
-      {
-        "tipo": "twitch",
-        "url": "https://www.twitch.tv/kmp_vt"
       }
     ],
     "envivo": null
