@@ -502,5 +502,23 @@
         "url": "https://www.instagram.com/kmp_vt"
       }
     ]
+  },
+  {
+    "id": "sendor-mvt481o1",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Sendor",
+    "nick": "zSendor",
+    "rol": "Demonio",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/soysendor"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@soysendor?_r=1&_t=ZS-9AwwjF7abzB"
+      }
+    ]
   }
 ]
