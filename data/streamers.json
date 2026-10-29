@@ -472,5 +472,35 @@
         "url": "https://kick.com/soyzerocriss"
       }
     ]
+  },
+  {
+    "id": "kmp-vt-mvt47z6w",
+    "skin": "",
+    "envivo": null,
+    "nombre": "KMP_VT",
+    "nick": "KMPG0D",
+    "rol": "El brujo de las llamas azules 🔥",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@kmp_vt"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/kmp_vt"
+      },
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/kmp-vt"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@kmp_VT"
+      },
+      {
+        "tipo": "instagram",
+        "url": "https://www.instagram.com/kmp_vt"
+      }
+    ]
   }
 ]
