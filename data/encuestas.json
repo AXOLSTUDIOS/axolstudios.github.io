@@ -1,1 +1,209 @@
-[]
+[
+  {
+    "id": "quien-crees-que-muera-primero-mvubrsqn",
+    "fecha": "2026-10-30T02:00:20.543Z",
+    "pregunta": "¿Quién crees que muera primero?",
+    "activa": true,
+    "abierta": true,
+    "opciones": [
+      {
+        "id": "ejemplo",
+        "nombre": "mish_ortiz",
+        "nick": "mish_ortiz",
+        "skin": ""
+      },
+      {
+        "id": "yio-soy-neet-mvnb9w23",
+        "nombre": "Yio_soy_Neet",
+        "nick": "Yio_Soy_Neet",
+        "skin": ""
+      },
+      {
+        "id": "rafer-mx-mvnbbrat",
+        "nombre": "Rafer_Mx",
+        "nick": "Rafer_Mx",
+        "skin": ""
+      },
+      {
+        "id": "mmarin-mvnbdy2t",
+        "nombre": "Mmarin",
+        "nick": "Mmarin3",
+        "skin": ""
+      },
+      {
+        "id": "kiritosenpaiyt-mvnbifvg",
+        "nombre": "KiritoSenpaiYT",
+        "nick": "KiritoSenpaiYT",
+        "skin": ""
+      },
+      {
+        "id": "patosando08-mvnbjxsy",
+        "nombre": "Patosando08",
+        "nick": "Patosando08",
+        "skin": ""
+      },
+      {
+        "id": "miau707-mvnblzcd",
+        "nombre": "Miau707",
+        "nick": "Miau707",
+        "skin": ""
+      },
+      {
+        "id": "wolf-owner-de-handicraft-mvnbpy0o",
+        "nombre": "Wolf DIOS DE HANDICRAFT",
+        "nick": "TxrTheWolf",
+        "skin": ""
+      },
+      {
+        "id": "chica-humito-mvnbursb",
+        "nombre": "ChicaHumitoOfc",
+        "nick": "ChicaHumitoOfc",
+        "skin": ""
+      },
+      {
+        "id": "derekelchid0-mvomqi91",
+        "nombre": "Derekelchid0",
+        "nick": "D3r3k3lchid0",
+        "skin": ""
+      },
+      {
+        "id": "emymochii-mvomqkiv",
+        "nombre": "Emymochii",
+        "nick": "Emymochiii",
+        "skin": ""
+      },
+      {
+        "id": "adriss-mvon37in",
+        "nombre": "adriss",
+        "nick": "BicentricHat996",
+        "skin": ""
+      },
+      {
+        "id": "l30n4rd-3m-mvon3crn",
+        "nombre": "L30N4RD 3M",
+        "nick": "L30N4RD0L3M",
+        "skin": ""
+      },
+      {
+        "id": "xzephyro-mvopjaq3",
+        "nombre": "xZephyro",
+        "nick": "xZephyro",
+        "skin": ""
+      },
+      {
+        "id": "lazelyn-mvopjcis",
+        "nombre": "LaZelyn_",
+        "nick": "YZVzelyn",
+        "skin": ""
+      },
+      {
+        "id": "normix6-mvopjdxt",
+        "nombre": "Normix6",
+        "nick": "Normix6",
+        "skin": ""
+      },
+      {
+        "id": "cherry-zura-mvopseha",
+        "nombre": "Cherry/Zura",
+        "nick": "AzuraGrey",
+        "skin": ""
+      },
+      {
+        "id": "duck-el-apostador-mvpk03qg",
+        "nombre": "duck el apostador",
+        "nick": "duck_tactical",
+        "skin": ""
+      },
+      {
+        "id": "tiolento-mvpk06g6",
+        "nombre": "Tiolento",
+        "nick": "Alain171717",
+        "skin": ""
+      },
+      {
+        "id": "clankirin-mvpywf10",
+        "nombre": "Clankirin",
+        "nick": "Clankirin",
+        "skin": ""
+      },
+      {
+        "id": "zaintv1-mvpywj2i",
+        "nombre": "zaintv1",
+        "nick": "zaintv1games",
+        "skin": ""
+      },
+      {
+        "id": "tio-mora-mvpywjyo",
+        "nombre": "TIO MORA",
+        "nick": "TIOMORA",
+        "skin": ""
+      },
+      {
+        "id": "yessi-bunny-kim-mvpywl7n",
+        "nombre": "Yessi Bunny Kim",
+        "nick": "yessikimjv",
+        "skin": ""
+      },
+      {
+        "id": "soyzerocriss-mvqz9mom",
+        "nombre": "SoyZeroCriss",
+        "nick": "SoyZeroCriss",
+        "skin": ""
+      },
+      {
+        "id": "kmp-vt-mvt47z6w",
+        "nombre": "KMP_VT",
+        "nick": "KMPG0D",
+        "skin": ""
+      },
+      {
+        "id": "sendor-mvt481o1",
+        "nombre": "Sendor",
+        "nick": "zSendor",
+        "skin": ""
+      },
+      {
+        "id": "totorneo-mvt483ha",
+        "nombre": "Totorneo",
+        "nick": "Totornero",
+        "skin": ""
+      },
+      {
+        "id": "jmcrack540-mvt485ct",
+        "nombre": "Jmcrack540",
+        "nick": "Jmcrack540",
+        "skin": ""
+      },
+      {
+        "id": "bryzart-mvu9r8rc",
+        "nombre": "BryZart",
+        "nick": "BryZart",
+        "skin": ""
+      },
+      {
+        "id": "axolotito888-mvu9rafo",
+        "nombre": "axolotito888",
+        "nick": "axolotito888",
+        "skin": ""
+      },
+      {
+        "id": "endo-mvu9raz8",
+        "nombre": "Endo",
+        "nick": "SoyEndo",
+        "skin": ""
+      },
+      {
+        "id": "reudams-ig-y-tiktok-imnotboli-mvu9rbmh",
+        "nombre": "Reudams ( ig y Tiktok : imnotboli",
+        "nick": "Reudams",
+        "skin": ""
+      },
+      {
+        "id": "killerp0llo13-mvubreen",
+        "nombre": "KillerP0llo13",
+        "nick": "KillerP0llo1300",
+        "skin": ""
+      }
+    ]
+  }
+]
