@@ -586,5 +586,19 @@
         "url": "https://www.tiktok.com/@axolotito888?_r=1&_t=ZS-9AyPprxwRbc"
       }
     ]
+  },
+  {
+    "id": "endo-mvu9raz8",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Endo",
+    "nick": "SoyEndo",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/soyendoo"
+      }
+    ]
   }
 ]
