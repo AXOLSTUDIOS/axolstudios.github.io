@@ -8,5 +8,5 @@
     "instagram": ""
   },
   "firebase": "https://axol-votos-default-rtdb.firebaseio.com",
-  "registroAbierto": false
+  "registroAbierto": true
 }
