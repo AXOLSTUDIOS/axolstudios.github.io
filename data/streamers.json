@@ -546,5 +546,19 @@
         "url": "https://www.instagram.com/jmcr.ack540/"
       }
     ]
+  },
+  {
+    "id": "bryzart-mvu9r8rc",
+    "skin": "",
+    "envivo": null,
+    "nombre": "BryZart",
+    "nick": "BryZart",
+    "rol": "Archimago del Éter",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/BryZart"
+      }
+    ]
   }
 ]
