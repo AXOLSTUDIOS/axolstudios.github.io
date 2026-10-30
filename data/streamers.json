@@ -560,5 +560,31 @@
         "url": "https://www.twitch.tv/BryZart"
       }
     ]
+  },
+  {
+    "id": "axolotito888-mvu9rafo",
+    "skin": "",
+    "envivo": null,
+    "nombre": "axolotito888",
+    "nick": "axolotito888",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/axolotito88"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@Axolotito888"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/axolotito888"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@axolotito888?_r=1&_t=ZS-9AyPprxwRbc"
+      }
+    ]
   }
 ]
