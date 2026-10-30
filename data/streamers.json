@@ -600,5 +600,35 @@
         "url": "https://www.twitch.tv/soyendoo"
       }
     ]
+  },
+  {
+    "id": "reudams-ig-y-tiktok-imnotboli-mvu9rbmh",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Reudams ( ig y Tiktok : imnotboli",
+    "nick": "Reudams",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/reudams"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://youtube.com/@reudams?si=jke4AN42YVRP78yA"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/reudams"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@imnotboli_"
+      },
+      {
+        "tipo": "instagram",
+        "url": "https://www.instagram.com/imnotboli_?exln=bmNzdzNmbG5lbTR5&utm_source=qr"
+      }
+    ]
   }
 ]
