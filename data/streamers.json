@@ -630,5 +630,27 @@
         "url": "https://www.instagram.com/imnotboli_?exln=bmNzdzNmbG5lbTR5&utm_source=qr"
       }
     ]
+  },
+  {
+    "id": "killerp0llo13-mvubreen",
+    "skin": "",
+    "envivo": null,
+    "nombre": "KillerP0llo13",
+    "nick": "KillerP0llo1300",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@killerp0llo"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/killerp0llo13"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@killerp0llo137"
+      }
+    ]
   }
 ]
