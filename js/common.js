@@ -45,7 +45,21 @@
 
   function isLive(s) {
     if (!s || !s.envivo || !s.envivo.desde) return false
+    if (s.envivo.auto) return true // detectado por el servidor (ya viene filtrado)
     return Date.now() - new Date(s.envivo.desde).getTime() < LIVE_MAX_HOURS * 3600e3
+  }
+
+  // Quién está en vivo según la detección automática del servidor (mod AxolVivo).
+  // Si el servidor dejó de actualizar hace más de 15 min, no se muestra nada.
+  const FIREBASE = 'https://axol-votos-default-rtdb.firebaseio.com'
+  async function autoLive() {
+    try {
+      const r = await fetch(`${FIREBASE}/envivo.json?t=${Date.now()}`)
+      if (!r.ok) return {}
+      const d = await r.json()
+      if (!d || !d.actualizado || Date.now() - new Date(d.actualizado).getTime() > 15 * 60e3) return {}
+      return d.streamers || {}
+    } catch { return {} }
   }
 
   function liveUrl(s) {
@@ -58,7 +72,15 @@
     try {
       const r = await fetch(`data/${name}.json?v=${Math.floor(Date.now() / 60000)}`)
       if (!r.ok) throw new Error(r.status)
-      return await r.json()
+      const data = await r.json()
+      if (name === 'streamers' && Array.isArray(data)) {
+        const auto = await autoLive()
+        for (const s of data) {
+          const a = auto[s.id]
+          if (a && a.plataforma && !isLive(s)) s.envivo = { plataforma: a.plataforma, desde: a.desde || new Date().toISOString(), auto: true }
+        }
+      }
+      return data
     } catch { return fallback }
   }
 
