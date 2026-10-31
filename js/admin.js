@@ -150,7 +150,7 @@ ${items}
     const list = files['data/streamers.json'].data
     const el = $('#tab-live')
     if (!list.length) { el.innerHTML = '<p class="note">Primero agrega a tus streamers en la pestaña «Streamers».</p>'; return }
-    el.innerHTML = `<p class="note">Marca quién está transmitiendo. Se muestra en la página al momento de guardar (1–2 min) y se apaga solo tras 12 horas si lo olvidas.</p>` +
+    el.innerHTML = `<p class="note">Kick, Twitch y YouTube se detectan solos: el mod AxolVivo del servidor los revisa cada 3 minutos. Aquí puedes marcar a mano a quien no se detecte (por ejemplo, TikTok); se apaga solo tras 12 horas si lo olvidas.</p>` +
       list.map((s, i) => {
         const on = A.isLive(s)
         const pfs = (s.plataformas || []).filter(p => p.url)
