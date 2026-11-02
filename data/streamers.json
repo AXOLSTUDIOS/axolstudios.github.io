@@ -652,5 +652,27 @@
         "url": "https://www.youtube.com/@killerp0llo137"
       }
     ]
+  },
+  {
+    "id": "elkinvirus23-mvzmzbyc",
+    "skin": "",
+    "envivo": null,
+    "nombre": "ELKINVIRUS23",
+    "nick": "ELKINVIRUS23",
+    "rol": "MIXTO",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/kinvirus23"
+      },
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@elkinstudios"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@elkinvirus23"
+      }
+    ]
   }
 ]
