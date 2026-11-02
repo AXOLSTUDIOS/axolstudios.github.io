@@ -63,14 +63,14 @@
   },
   {
     "id": "mmarin-mvnbdy2t",
-    "nombre": "Mmarin",
+    "nombre": "Mmarin3",
     "nick": "Mmarin3",
     "skin": "",
-    "rol": "Participante",
+    "rol": "",
     "plataformas": [
       {
-        "tipo": "tiktok",
-        "url": "https://www.tiktok.com/@ttv.mmarin3"
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/mmarin3"
       }
     ],
     "envivo": null
