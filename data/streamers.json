@@ -674,5 +674,23 @@
         "url": "https://www.tiktok.com/@elkinvirus23"
       }
     ]
+  },
+  {
+    "id": "buenangel-mvzmze7s",
+    "skin": "",
+    "envivo": null,
+    "nombre": "buenangel",
+    "nick": "buenangel",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/buenangel/about"
+      },
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@buenangel?_r=1&_t=ZS-99MC8Fp90nk"
+      }
+    ]
   }
 ]
