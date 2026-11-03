@@ -692,5 +692,19 @@
         "url": "https://www.tiktok.com/@buenangel?_r=1&_t=ZS-99MC8Fp90nk"
       }
     ]
+  },
+  {
+    "id": "yanethgames-mw1clvmf",
+    "skin": "",
+    "envivo": null,
+    "nombre": "YanethGames",
+    "nick": "yanethitha",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/yanethgames"
+      }
+    ]
   }
 ]
