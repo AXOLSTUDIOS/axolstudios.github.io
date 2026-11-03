@@ -706,5 +706,33 @@
         "url": "https://www.twitch.tv/yanethgames"
       }
     ]
+  },
+  {
+    "id": "tonnybalah-mw1clweo",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Tonnybalah",
+    "nick": "zer0games",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "tiktok",
+        "url": "https://www.tiktok.com/@tonnymusic2001?_r=1&_t=ZS-9B6pnQOOySG"
+      }
+    ]
+  },
+  {
+    "id": "neoo-mw1clwy0",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Neoo",
+    "nick": "NxooMx",
+    "rol": "Paladin",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/neooomx"
+      }
+    ]
   }
 ]
