@@ -734,5 +734,19 @@
         "url": "https://www.twitch.tv/neooomx"
       }
     ]
+  },
+  {
+    "id": "davideldab-mw5azmmf",
+    "skin": "",
+    "envivo": null,
+    "nombre": "davideldab",
+    "nick": "davideldab2",
+    "rol": "berserk el caminante de la oscuridad",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://www.twitch.tv/davideldab03"
+      }
+    ]
   }
 ]
