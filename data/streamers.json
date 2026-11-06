@@ -748,5 +748,19 @@
         "url": "https://www.twitch.tv/davideldab03"
       }
     ]
+  },
+  {
+    "id": "lucas2luca-mw5azw7o",
+    "skin": "",
+    "envivo": null,
+    "nombre": "lucas2luca",
+    "nick": "lucas2luca",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/lucas2luca"
+      }
+    ]
   }
 ]
