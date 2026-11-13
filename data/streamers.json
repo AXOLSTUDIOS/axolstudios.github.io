@@ -728,5 +728,19 @@
         "url": "https://kick.com/sakucaptor"
       }
     ]
+  },
+  {
+    "id": "senkku-mwf5awr8",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Senkku",
+    "nick": "Senkku12",
+    "rol": "Cocinero",
+    "plataformas": [
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/senkku12"
+      }
+    ]
   }
 ]
