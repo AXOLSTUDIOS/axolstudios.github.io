@@ -693,10 +693,10 @@
     "envivo": null,
     "nombre": "davideldab",
     "nick": "davideldab2",
-    "rol": "berserk el caminante de la oscuridad",
+    "rol": "berserk",
     "plataformas": [
       {
-        "tipo": "kick",
+        "tipo": "twitch",
         "url": "https://www.twitch.tv/davideldab03"
       }
     ]
