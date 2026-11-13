@@ -714,5 +714,19 @@
         "url": "https://www.twitch.tv/lucas2luca"
       }
     ]
+  },
+  {
+    "id": "saku-mwf5avc4",
+    "skin": "",
+    "envivo": null,
+    "nombre": "Saku",
+    "nick": "SakuCaptor",
+    "rol": "",
+    "plataformas": [
+      {
+        "tipo": "kick",
+        "url": "https://kick.com/sakucaptor"
+      }
+    ]
   }
 ]
