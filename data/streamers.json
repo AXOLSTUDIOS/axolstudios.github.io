@@ -742,5 +742,23 @@
         "url": "https://www.twitch.tv/senkku12"
       }
     ]
+  },
+  {
+    "id": "asbellvt-mwijs343",
+    "skin": "",
+    "envivo": null,
+    "nombre": "AsbellVT",
+    "nick": "AsbellVT",
+    "rol": "Hechicera",
+    "plataformas": [
+      {
+        "tipo": "youtube",
+        "url": "https://www.youtube.com/@asbell-vtubervirtual"
+      },
+      {
+        "tipo": "twitch",
+        "url": "https://www.twitch.tv/asbell_vt"
+      }
+    ]
   }
 ]
