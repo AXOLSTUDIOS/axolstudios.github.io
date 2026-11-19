@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "quien-crees-que-muera-primero-mwmy6wu5",
+    "fecha": "2026-11-19T02:45:30.173Z",
+    "pregunta": "¿Quién crees que muera primero?",
+    "activa": true,
+    "abierta": true,
+    "opciones": [
+      {
+        "id": "ejemplo",
+        "nombre": "mish_ortiz",
+        "nick": "mish_ortiz",
+        "skin": ""
+      },
+      {
+        "id": "todos-mwmy63f1",
+        "nombre": "todos",
+        "nick": "todos",
+        "skin": ""
+      }
+    ]
+  }
+]
